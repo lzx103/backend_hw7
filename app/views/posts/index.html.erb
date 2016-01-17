@@ -1,0 +1,17 @@
+<%= form_for(@post_new) do |f| %>
+  <%= f.label :content, "Post goes here" %>
+  <%= f.text_field :content %>
+  <%= f.submit "Post" %>
+<% end %>
+
+<h1>Recent Posts:</h1>
+<ul>
+<% @posts.each do |p| %>
+	<li>
+	<%= p.created_at %></br>
+	@<%= p.user.screenname %>:<br/>
+	<%= p.content %><br/>
+	</li>
+<%end%>
+
+</ul>
